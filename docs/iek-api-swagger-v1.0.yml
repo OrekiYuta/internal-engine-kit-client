@@ -1,0 +1,171 @@
+openapi: 3.0.0
+info:
+  title: IEK API
+  version: 1.0.0
+servers:
+  - url: http://localhost:9090/iek
+  - url: https://fullstack.lyr.gd.cn/iek
+paths:
+  /locator:
+    get:
+      summary: Get the list of all locators
+      responses:
+        '200':
+          description: Successfully retrieved the locator list
+    post:
+      summary: Create a new locator
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LocatorInput'
+      responses:
+        '201':
+          description: Successfully created a new locator
+  /locator/{bizz}:
+    get:
+      summary: Get the details of a specific locator
+      parameters:
+        - name: bizz
+          in: path
+          description: Business identification of the locator
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved the locator details
+    put:
+      summary: Update a specific locator
+      parameters:
+        - name: bizz
+          in: path
+          description: Business identification of the locator
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LocatorInput'
+      responses:
+        '200':
+          description: Successfully updated the locator
+    delete:
+      summary: Delete a specific locator
+      parameters:
+        - name: bizz
+          in: path
+          description: Business identification of the locator
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Locator deleted successfully
+  /generator:
+    post:
+      summary: Create a new generator
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GeneratorInput'
+      responses:
+        '201':
+          description: Successfully created a new generator
+  /converter:
+    post:
+      summary: Create a new converter
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConverterInput'
+      responses:
+        '201':
+          description: Successfully created a new converter
+components:
+  schemas:
+    LocatorInput:
+      type: object
+      properties:
+        bizz:
+          type: string
+          description: Business identification
+        title:
+          type: string
+          description: System title
+        website:
+          type: string
+          description: System URL
+        account:
+          type: string
+          description: User account
+        hex_secret:
+          type: string
+          description: Account secret in hexadecimal format
+        remark:
+          type: string
+          description: Remark
+      required:
+        - bizz
+        - title
+        - website
+        - account
+        - hex_secret
+    GeneratorInput:
+      type: object
+      properties:
+        bizz:
+          type: string
+          description: Business identification
+        topic:
+          type: string
+          description: Generator name
+        attribute:
+          type: string
+          description: Generator type
+        source:
+          type: string
+          description: Generator input
+        expect:
+          type: string
+          description: Generator output
+        remark:
+          type: string
+          description: Remark
+      required:
+        - bizz
+        - topic
+        - attribute
+    ConverterInput:
+      type: object
+      properties:
+        bizz:
+          type: string
+          description: Business identification
+        topic:
+          type: string
+          description: Converter name
+        attribute:
+          type: string
+          description: Converter type
+        source:
+          type: string
+          description: Converter input
+        expect:
+          type: string
+          description: Converter output
+        remark:
+          type: string
+          description: Remark
+      required:
+        - bizz
+        - topic
+        - attribute

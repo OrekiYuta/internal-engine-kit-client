@@ -1,0 +1,528 @@
+{
+  "info": {
+    "_postman_id": "7d935125-083b-4df9-b442-2e0bdb4042d4",
+    "name": "IEK API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "9337758",
+    "_collection_link": "https://www.postman.com/elias-c24s/workspace/00-elias-stack/collection/9337758-7d935125-083b-4df9-b442-2e0bdb4042d4?action=share&source=collection_link&creator=9337758"
+  },
+  "item": [
+    {
+      "name": "locator",
+      "item": [
+        {
+          "name": "Get the list of all locators",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/locator",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "locator"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create a new locator",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"test\",\n    \"website\": \"https://www.test.com\",\n    \"account\": \"test\",\n    \"hexSecret\": \"test\",\n    \"remark\": \"Remark 1\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/locator",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "locator"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successfully created a new locator",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"title\": \"test\",\n    \"website\": \"https://www.test.com\",\n    \"account\": \"test\",\n    \"hexSecret\": \"test\",\n    \"remark\": \"Remark 1\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/locator",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "locator"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Access-Control-Request-Method"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Access-Control-Request-Headers"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 19 Aug 2023 15:02:05 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Success\"\n    },\n    \"data\": {\n        \"bizz\": \"4271ce09-fa1f-4aa2-aafc-6c0b83b64379\",\n        \"title\": \"test\",\n        \"website\": \"https://www.test.com\",\n        \"account\": \"test\",\n        \"hexSecret\": \"test\",\n        \"remark\": \"Remark 1\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get the details of a specific locator",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/locator/:bizz",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "locator",
+                ":bizz"
+              ],
+              "variable": [
+                {
+                  "key": "bizz",
+                  "value": "4271ce09-fa1f-4aa2-aafc-6c0b83b64379"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get the details of a specific locator",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/locator/:bizz",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "locator",
+                    ":bizz"
+                  ],
+                  "variable": [
+                    {
+                      "key": "bizz",
+                      "value": "4271ce09-fa1f-4aa2-aafc-6c0b83b64379"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Access-Control-Request-Method"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Access-Control-Request-Headers"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 19 Aug 2023 15:02:35 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Success\"\n    },\n    \"data\": {\n        \"bizz\": \"4271ce09-fa1f-4aa2-aafc-6c0b83b64379\",\n        \"title\": \"test\",\n        \"website\": \"https://www.test.com\",\n        \"account\": \"test\",\n        \"hexSecret\": \"test\",\n        \"remark\": \"Remark 1\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update a specific locator",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"bizz\": \"4d71bea2-e200-49fa-95cd-d4236752baed\",\n    \"title\": \"WOWOWO\",\n    \"website\": \"www.TEST.com\",\n    \"account\": \"TEST\",\n    \"hexSecret\": \"TEST\",\n    \"remark\": \"TEST 12222\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/locator/:bizz",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "locator",
+                ":bizz"
+              ],
+              "variable": [
+                {
+                  "key": "bizz",
+                  "value": "4d71bea2-e200-49fa-95cd-d4236752baed"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a specific locator",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/locator/:bizz",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "locator",
+                ":bizz"
+              ],
+              "variable": [
+                {
+                  "key": "bizz",
+                  "value": "0cb70c65-8ec6-48ea-9470-1360380b9eff"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "generator",
+      "item": [
+        {
+          "name": "Create a new generator",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"topic\": \"test_datapatch\",\n    \"attribute\": \"G_DATA_PATCH\",\n    \"source\": \"{\\\"statement\\\":\\\"CREATE TABLE IEK_GENERATOR ( id INTEGER PRIMARY KEY, bizz VARCHAR(36) NOT NULL, topic VARCHAR(20) NOT NULL, attribute VARCHAR(20) NOT NULL, source LONGTEXT, expect LONGTEXT, remark VARCHAR(255), is_active CHAR(1) NOT NULL CHECK (is_active IN ('Y', 'N')), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP );\\\",\\\"count\\\":\\\"3\\\"}\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/generator",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "generator"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successfully created a new generator",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"topic\": \"generator_datapatch\",\n    \"attribute\": \"G_DATA_PATCH\",\n    \"source\": \"{\\\"statement\\\":\\\"CREATE TABLE IEK_GENERATOR ( id INTEGER PRIMARY KEY, bizz VARCHAR(36) NOT NULL, topic VARCHAR(20) NOT NULL, attribute VARCHAR(20) NOT NULL, source LONGTEXT, expect LONGTEXT, remark VARCHAR(255), is_active CHAR(1) NOT NULL CHECK (is_active IN ('Y', 'N')), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP );\\\",\\\"count\\\":\\\"3\\\"}\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/generator",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "generator"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Access-Control-Request-Method"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Access-Control-Request-Headers"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 19 Aug 2023 15:01:03 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Success\"\n    },\n    \"data\": {\n        \"bizz\": \"c24daf55-7e39-4bd8-825a-dba84f3ebb30\",\n        \"topic\": \"test_datapatch\",\n        \"attribute\": \"G_DATA_PATCH\",\n        \"source\": \"{\\\"statement\\\":\\\"CREATE TABLE IEK_GENERATOR ( id INTEGER PRIMARY KEY, bizz VARCHAR(36) NOT NULL, topic VARCHAR(20) NOT NULL, attribute VARCHAR(20) NOT NULL, source LONGTEXT, expect LONGTEXT, remark VARCHAR(255), is_active CHAR(1) NOT NULL CHECK (is_active IN ('Y', 'N')), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP );\\\",\\\"count\\\":\\\"3\\\"}\",\n        \"expect\": \"{\\\"sqlStatement\\\":[\\\"INSERT INTO IEK_GENERATOR (id, bizz, topic, attribute, source, expect, remark, is_active, created_at, updated_at) VALUES (172772818, 'Vel quos aperiam optio ad optio perf', 'At quia aut temporib', 'Cupiditate sunt aliq', 'Possimus accusantium dolor qui ut velit aut aut molestiae itaque quis enim consequatur ipsam eveniet sunt fugit ullam ex quisquam aut libero dolores deserunt nostrum non suscipit explicabo ut corrupti quod maxime commodi illum enim deserunt voluptatibus i', 'Sit itaque dolores ab voluptas qui autem pariatur quisquam velit aut fugit et occaecati ea non sed quam rerum omnis temporibus numquam praesentium et accusamus excepturi vel error dolor minus culpa et eos voluptatem laudantium sed sit natus est consequunt', 'Fugiat voluptas eaque velit saepe expedita illo quam pariatur a voluptatum odio atque adipisci nihil molestiae ut quia in rem consequatur quis sed asperiores commodi sint in amet non magni velit in explicabo ut ad minus labore corporis excepturi velit non', 'N', '2022-08-28 15:12:24', '2023-03-31 17:50:56');\\\",\\\"INSERT INTO IEK_GENERATOR (id, bizz, topic, attribute, source, expect, remark, is_active, created_at, updated_at) VALUES (31577657, 'Ipsa quasi ea omnis sit sunt fugit s', 'Non excepturi volupt', 'Quibusdam nulla aut ', 'Et dolores quo id voluptas assumenda eos voluptatem eius enim nobis quia illo doloremque nemo incidunt amet commodi aut excepturi in iusto ab doloremque quidem itaque quas qui pariatur molestiae sed facilis sit explicabo quis et soluta blanditiis a offici', 'Dicta dignissimos explicabo ipsam et illo iste tempore aperiam et vitae tempore reprehenderit fugiat ipsa ut labore quia laborum soluta commodi impedit incidunt voluptatem natus magnam omnis nesciunt iusto quam excepturi id est et doloremque officiis dolo', 'Cupiditate enim officiis voluptatem vero non tenetur sunt quaerat sint distinctio iure itaque ullam quia et sed numquam aliquam dolore vel delectus officiis dignissimos repellendus explicabo in in quis adipisci culpa sint id magni est dolorem ullam qui op', 'Y', '2022-11-08 14:08:25', '2023-08-14 05:56:29');\\\",\\\"INSERT INTO IEK_GENERATOR (id, bizz, topic, attribute, source, expect, remark, is_active, created_at, updated_at) VALUES (4, 'Repudiandae esse enim odit accusamus', 'Provident earum quos', 'Consequatur est illu', 'Cum ipsam laboriosam enim voluptas in soluta at molestiae incidunt qui enim sequi neque rem quo animi sequi accusamus tempore itaque labore veritatis quam sint sed aut sit debitis quia placeat et sed nobis illo nesciunt aut officiis magni qui sint id reru', 'Explicabo a maxime aut quasi consectetur similique beatae omnis ex quis sit voluptates vitae sed fuga nihil nulla aut veritatis modi quo sed laudantium consequatur ut libero aut omnis maiores amet ut iste nostrum rerum ut quam odit et tempore fugit volupt', 'Labore architecto delectus architecto sed illum veniam recusandae minus officiis quisquam quia ipsum maxime quia est atque magnam porro natus qui iure unde optio et laudantium magni in asperiores exercitationem alias et occaecati laboriosam fuga rerum et ', 'Y', '2022-11-09 17:44:06', '2022-10-12 06:19:40');\\\"],\\\"jsonStatement\\\":[{\\\"id\\\":\\\"31\\\",\\\"bizz\\\":\\\"Repellendus dignissimos aut corrupti\\\",\\\"topic\\\":\\\"Qui odio officiis ei\\\",\\\"attribute\\\":\\\"Et cupiditate in har\\\",\\\"source\\\":\\\"Doloremque quidem quia est et dignissimos atque nihil ratione corrupti placeat reprehenderit optio cupiditate veniam cum laborum culpa doloribus sint voluptatem harum dignissimos quibusdam dicta porro dignissimos corporis est cumque alias eum error perspi\\\",\\\"expect\\\":\\\"Dolorem omnis fuga sed et assumenda corporis dolore quae quasi molestiae ducimus cupiditate aliquid minus consequatur tenetur eius dolorem eligendi dolorem ipsa illum quisquam reiciendis tempora eum commodi eum sunt fuga dolore tenetur culpa consequatur n\\\",\\\"remark\\\":\\\"Minima fugiat esse ipsum incidunt assumenda qui quae quam est consequatur quis vitae placeat eos voluptate nulla sit hic ex consequatur eveniet ut vel est quam quisquam itaque rem deleniti deleniti voluptatum perspiciatis animi sit soluta laborum et ducim\\\",\\\"is_active\\\":\\\"Y\\\",\\\"created_at\\\":\\\"2023-02-20 10:20:02\\\",\\\"updated_at\\\":\\\"2023-06-27 21:06:48\\\"},{\\\"id\\\":\\\"8\\\",\\\"bizz\\\":\\\"Et rerum ab minima numquam eum quas \\\",\\\"topic\\\":\\\"Commodi est velit do\\\",\\\"attribute\\\":\\\"Itaque vel et volupt\\\",\\\"source\\\":\\\"Numquam et nihil consequatur beatae perspiciatis commodi alias iusto qui voluptas facere necessitatibus repellendus cupiditate minus ea et et voluptatem laboriosam odit eaque quia doloribus quasi sint qui vero repellat natus aut aut accusamus ducimus qui \\\",\\\"expect\\\":\\\"Ex dolor ut aut delectus dolores et aut dolores quia odit ipsa accusantium exercitationem non cum aut mollitia consequatur eius possimus provident et beatae quidem molestiae natus qui eos nesciunt quis rem ipsum tempora reiciendis nisi at consequatur magn\\\",\\\"remark\\\":\\\"Quia quas recusandae autem error omnis voluptatum sed aut et in odio itaque qui ad corrupti quo libero dolores voluptates dicta soluta fugiat ducimus deserunt rerum ipsam tenetur quas provident quisquam voluptatem libero deserunt delectus nobis sunt est u\\\",\\\"is_active\\\":\\\"N\\\",\\\"created_at\\\":\\\"2023-05-11 22:42:30\\\",\\\"updated_at\\\":\\\"2022-11-05 02:20:46\\\"},{\\\"id\\\":\\\"78649\\\",\\\"bizz\\\":\\\"Dolor eaque et culpa accusantium rem\\\",\\\"topic\\\":\\\"Et ea dolor odit dis\\\",\\\"attribute\\\":\\\"Ipsa sunt ut expedit\\\",\\\"source\\\":\\\"Est est adipisci soluta nulla odit odio cupiditate enim similique sapiente labore alias dolor aut illum et fugit sunt et esse placeat ut quam ea aut nobis aut tempora distinctio quia quos omnis quibusdam dolores qui iste eos qui quisquam enim hic autem te\\\",\\\"expect\\\":\\\"Reiciendis at qui doloribus ratione facere ipsum ut dolor quo accusamus dicta eum aut sequi alias rerum non voluptatibus eos reprehenderit non minima dolorum ad voluptatem in cumque temporibus laboriosam quaerat consequuntur quaerat nulla animi hic sit iu\\\",\\\"remark\\\":\\\"Possimus rerum rerum aut nihil et eaque maxime soluta sit ut suscipit dignissimos id aut eius hic quis sint non odit delectus aut fugiat similique ullam aspernatur quo maxime id voluptatibus molestiae veritatis rerum nostrum voluptas laboriosam esse quia \\\",\\\"is_active\\\":\\\"N\\\",\\\"created_at\\\":\\\"2023-05-27 02:49:50\\\",\\\"updated_at\\\":\\\"2023-07-09 15:55:24\\\"}]}\",\n        \"remark\": null\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "converter",
+      "item": [
+        {
+          "name": "Create a new converter",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"topic\": \"converter_uuid\",\n  \"attribute\": \"C_UUID\",\n  \"source\": \"de467d96-33d0-4c14-92ce-885e24a3506c\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/converter",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "converter"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successfully created a new converter",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"topic\": \"converter_uuid\",\n  \"attribute\": \"C_UUID\",\n  \"source\": \"de467d96-33d0-4c14-92ce-885e24a3506c\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/converter",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "converter"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Access-Control-Request-Method"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Access-Control-Request-Headers"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 19 Aug 2023 14:33:21 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Success\"\n    },\n    \"data\": {\n        \"bizz\": \"d3433086-d209-4115-8764-739caa174a7d\",\n        \"topic\": \"converter_uuid\",\n        \"attribute\": \"C_UUID\",\n        \"source\": \"de467d96-33d0-4c14-92ce-885e24a3506c\",\n        \"expect\": \"de467d9633d04c1492ce885e24a3506c\",\n        \"remark\": null\n    }\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:9090/iek"
+    }
+  ]
+}
